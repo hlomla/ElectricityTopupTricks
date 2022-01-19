@@ -25,35 +25,34 @@ app.set('view engine', 'handlebars');
 
 const electricityMeters = ElectricityMeters(pool);
 
-app.get('/', async function(req, res) {
-	
+app.get('/', function(req, res) {
 	res.redirect('/streets');
 });
 
-app.get('/streets/meters/:id', async function(req, res) {
-	const streetId = req.params.id
-	const showStreet = await electricityMeters.streetMeters(streetId);
+app.get('/streets', async function(req, res) {
 	const streets = await electricityMeters.streets();
-	
 	console.log(streets);
-	console.log(showStreet)
 	res.render('streets', {
-		streets,
-		showStreet
+		streets
 	});
 });
 
 app.get('/meter/:street_id', async function(req, res) {
-
 	// use the streetMeters method in the factory function...
 	// send the street id in as sent in by the URL parameter street_id - req.params.street_id
 
 	// create  template called street_meters.handlebars
 	// in there loop over all the meters and show them on the screen.
 	// show the street number and name and the meter balance
+	const streetId = req.params.street_id
+	console.log(streetId);
+	const streets = await electricityMeters.streets();
+	const showStreet = await electricityMeters.streetMeters(streetId)
+	
 
 	res.render('street_meters', {
-		meters
+		streets,
+		showStreet
 	});
 });
 
