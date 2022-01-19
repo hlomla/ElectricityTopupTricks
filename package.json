@@ -1,11 +1,11 @@
 {
   "name": "electricity-topups",
   "version": "1.0.0",
-  "description": "",
+  "description": "[![Build Status](https://app.travis-ci.com/hlomla/ElectricityTopupTricks.svg?branch=main)](https://app.travis-ci.com/hlomla/ElectricityTopupTricks)",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test" : "mocha"
+    "test": "mocha"
   },
   "keywords": [],
   "author": "",
@@ -15,5 +15,16 @@
     "express-handlebars": "^5.3.3",
     "mocha": "^9.1.4",
     "pg": "^8.7.1"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hlomla/ElectricityTopupTricks.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hlomla/ElectricityTopupTricks/issues"
+  },
+  "homepage": "https://github.com/hlomla/ElectricityTopupTricks#readme"
 }
